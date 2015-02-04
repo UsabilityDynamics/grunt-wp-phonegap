@@ -1,10 +1,14 @@
 {
-  "name": "wp-phonegap",
+  "name": "grunt-wp-phonegap",
   "version": "1.0.0",
   "preferGlobal": true,
   "bin": {
     "wp-phonegap": "bin/wp-phonegap.js"
   },
+  "keywords": [
+    "gruntplugin",
+    "grunt"
+  ],
   "description": "",
   "main": "index.js",
   "scripts": {

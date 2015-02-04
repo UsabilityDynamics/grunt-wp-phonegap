@@ -86,7 +86,7 @@ module.exports = function ( grunt ) {
   // TASKS
   // ==========================================================================
 
-  grunt.registerMultiTask( 'download', 'Downloads files via HTTP', function () {
+  grunt.registerMultiTask( 'wpPhoneGap', 'Downloads files via HTTP', function () {
     var configData = this.data;
     var done = this.async();
 
