@@ -137,8 +137,12 @@ module.exports = function ( grunt ) {
       token: null,
       device: null,
       platform: null,
+      output: require( 'os' ).tmpdir + '/_tmp',
       requestHeaders: {}
     }, this.options(), this.data );
+
+    // resolve path
+    options.output = require( 'path' ).resolve( options.output.replace( '~', process.env.HOME ) );
 
     if( options._target === 'fetchManifest' ) {
       fetchManifest( options, function( error, data ) {
