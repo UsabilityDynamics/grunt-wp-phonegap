@@ -1,6 +1,6 @@
 {
   "name": "grunt-wp-phonegap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "preferGlobal": true,
   "bin": {
     "wp-phonegap": "bin/wp-phonegap.js"
@@ -26,19 +26,11 @@
   "homepage": "https://github.com/UsabilityDynamics/node-wp-phonegap",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-symlink": "^0.3.0",
-    "grunt-phonegap": "^0.15.2"
+    "load-grunt-tasks": "^2.0.0"
   },
   "dependencies": {
     "async": "^0.9.0",
-    "commander": "^2.6.0",
-    "grunt-curl": "^2.1.0",
-    "grunt-get": "^0.1.2",
-    "grunt-initconfig": "0.0.1",
-    "load-grunt-tasks": "^2.0.0",
     "mkdirp": "^0.5.0",
-    "request": "^2.51.0",
-    "shelljs": "^0.3.0"
+    "request": "^2.51.0"
   }
 }
