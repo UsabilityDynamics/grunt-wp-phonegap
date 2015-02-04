@@ -7,12 +7,4 @@ module.exports = function(grunt) {
     scope: [ 'devDependencies', 'dependencies' ]
   });
 
-  grunt.initConfig({
-
-
-  });
-
-  grunt.loadTasks('tasks' );
-
-
 };
