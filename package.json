@@ -1,5 +1,5 @@
 {
-  "name": "node-wp-phonegap",
+  "name": "wp-phonegap",
   "version": "1.0.0",
   "preferGlobal": true,
   "bin": {

@@ -88,8 +88,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('update', [
     //'clean:symlinks',
-    'clean:preUpdate',
-    'download:site',
+    //'clean:preUpdate',
+    ///'download:site',
     //'clean:postUpdate',
     // 'clean:config',
     // 'download:config'
