@@ -118,8 +118,14 @@ function startBuild( options, done ) {
 
     api.post('/apps/' +  options.appId + '/build', function(e, data) {
       // console.log('error:', e);
-      console.log('data:', data);
+      if( data && data.build_count ) {
+        grunt.log.write( ' \n --> Triggered build. Build count:' + data.build_count );
+      } else {
+        grunt.log.write( ' \n --> Could not trigger build.' );
+      }
+
       done();
+
     });
 
   });
