@@ -49,7 +49,6 @@ module.exports = function ( grunt ) {
       //return;
     }
 
-
     var file = fs.createWriteStream( outputFilename );
 
     request.get({
@@ -86,7 +85,7 @@ module.exports = function ( grunt ) {
   // TASKS
   // ==========================================================================
 
-  grunt.registerMultiTask( 'wpPhoneGap:download', 'Downloads files via HTTP', function () {
+  grunt.registerMultiTask( '__wpPhoneGap:download', 'Downloads files via HTTP', function () {
     var configData = this.data;
     var done = this.async();
 
@@ -95,9 +94,9 @@ module.exports = function ( grunt ) {
       pipeRequest( task.newUrl, task.assetFilename, callback );
     }, 20);
 
-
     var parsedUrl = url.parse( configData.url, true );
     var filename = configData.filename;
+
     if( fs.statSync( configData.filename ).isDirectory() ) {
       filename = path.join( configData.filename, path.basename( parsedUrl.pathname ) );
     }
