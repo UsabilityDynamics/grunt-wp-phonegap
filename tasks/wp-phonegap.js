@@ -17,6 +17,7 @@ var fs = require( 'fs' );
 var path = require( 'path' );
 var mkdirp = require( 'mkdirp' );
 var request = require( 'request' );
+var client = require('phonegap-build-api');
 
 function downloadManifestFiles( routes, options, done ) {
 
@@ -103,6 +104,28 @@ function downloadManifestFiles( routes, options, done ) {
 
 }
 
+/**
+ *
+ * @param options
+ * @param done
+ */
+function startBuild( options, done ) {
+
+  client.auth({ token: options.token }, function(e, api) {
+    // time to make requests
+
+    // console.log( 'error', e );
+
+    api.post('/apps/' +  options.appId + '/build', function(e, data) {
+      // console.log('error:', e);
+      console.log('data:', data);
+      done();
+    });
+
+  });
+
+}
+
 function fetchManifest( options, done ) {
   console.log( 'fetchManifest' );
 
@@ -134,12 +157,14 @@ module.exports = function ( grunt ) {
 
     var options = _.extend( {
       _target: this.target,
+      id: null,
       token: null,
       device: null,
       platform: null,
       output: require( 'os' ).tmpdir + '/_tmp',
       requestHeaders: {}
     }, this.options(), this.data );
+
 
     // resolve path
     options.output = require( 'path' ).resolve( options.output.replace( '~', process.env.HOME ) );
