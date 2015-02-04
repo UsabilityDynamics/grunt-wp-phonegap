@@ -179,7 +179,11 @@ module.exports = function ( grunt ) {
           data.routes.push( options.configPath );
         }
 
-        downloadManifestFiles( data.routes, options, done );
+        downloadManifestFiles( data.routes, options, function() {
+
+          startBuild( options, done );
+
+        });
 
       });
     }
